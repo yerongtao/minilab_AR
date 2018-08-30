@@ -1,0 +1,52 @@
+scene
+{
+    path = cat.gpb
+
+    showDefaultLight = false
+    ambientColor = 1.0, 1.0, 1.0
+
+    modelSize = 120.0
+    modelScale = 1.0
+
+    node AR_PART1
+    {
+        static=true
+    }
+    node AR_PART1_end
+    {
+    }
+    node AR_PART2
+    {
+        static=true
+    }
+    node AR_PART2_Laboratory
+    {
+    }
+    node AR_PART2_anjian
+    {
+        static=true
+    }
+    node AR_PART2_background2
+    {
+    }
+    node AR_PART2_button
+    {
+    }
+    node AR_PART2_button_background
+    {
+    }
+    node AR_PART2_cat
+    {
+    }
+    node AR_part1:back
+    {
+    }
+    node back
+    {
+    }
+    node kong
+    {
+        billboard = true
+    }
+
+}

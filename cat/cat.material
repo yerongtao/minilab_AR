@@ -1,0 +1,178 @@
+material textured
+{
+    sampler u_diffuseTexture
+    {
+        mipmap = false
+        wrapS = CLAMP
+        wrapT = CLAMP
+        minFilter = LINEAR
+        magFilter = LINEAR
+    }
+
+    technique
+    {
+        pass
+        {
+            vertexShader = shaders/textured.vert
+            fragmentShader = shaders/textured.frag
+
+            u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+            u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+
+            renderState
+            {
+                blend = false
+                blendDst = ONE_MINUS_SRC_ALPHA
+                blendSrc = SRC_ALPHA
+                cullFace = true
+                cullFaceSide = BACK
+                depthTest = true
+            }
+
+        }
+    }
+}
+
+material colored
+{
+    technique
+    {
+        pass
+        {
+            vertexShader = shaders/colored.vert
+            fragmentShader = shaders/colored.frag
+
+            u_inverseTransposeWorldViewMatrix = INVERSE_TRANSPOSE_WORLD_VIEW_MATRIX
+            u_worldViewProjectionMatrix = WORLD_VIEW_PROJECTION_MATRIX
+
+            renderState
+            {
+                blend = false
+                blendDst = ONE_MINUS_SRC_ALPHA
+                blendSrc = SRC_ALPHA
+                cullFace = true
+                cullFaceSide = BACK
+                depthTest = true
+            }
+
+        }
+    }
+}
+
+material AR_part1_AR_part2_lambert3 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = cat.fbm/AR-PART2_Laboratory.png
+    }
+
+    technique
+    {
+        pass
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+        }
+    }
+}
+
+material AR_part1_AR_part2_lambert4 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = cat.fbm/AR-PART2_background2.png
+    }
+
+    technique
+    {
+        pass
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+            defines = MODULATE_ALPHA
+        }
+    }
+}
+
+material AR_part1_AR_part2_lambert5 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = cat.fbm/AR-PART2_button background2.png
+    }
+
+    technique
+    {
+        pass
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+        }
+    }
+}
+
+material AR_part1_AR_part2_lambert6 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = cat.fbm/AR-PART2_button.png
+    }
+
+    technique
+    {
+        pass
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+        }
+    }
+}
+
+material AR_part1_lambert5 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = cat.fbm/AR-PART1_end.png
+    }
+
+    technique
+    {
+        pass
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+        }
+    }
+}
+
+material lambert1 : colored
+{
+    technique
+    {
+        pass
+        {
+            u_diffuseColor = 0.5, 0.5, 0.5, 1
+
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+        }
+    }
+}
+
+material lambert3 : textured
+{
+    sampler u_diffuseTexture
+    {
+        path = cat.fbm/AR-PART2_0001.png
+    }
+
+    technique
+    {
+        pass
+        {
+            defines = DIRECTIONAL_LIGHT_COUNT 1
+            defines = TEXTURE_DISCARD_ALPHA;DISCARD_ALPHA 0.5
+        }
+    }
+}
+
